@@ -1,18 +1,26 @@
-export function Journal(subject, body) {
+export function Journal(subject, body, fullJournal) {
   this.subject = subject,
-  this.body = body
+  this.body = body,
+  this.fullJournal = " "
 }
-let fullJournal = [];
+
 
 Journal.prototype.combineJournal = function() {
-  fullJournal.push(subject+body);
-  return fullJournal;
-  console.log(fullJournal);
+  let fullJournalArr = [];
+  fullJournalArr.push(this.subject+" "+this.body);
+  this.fullJournal = fullJournalArr.join();
+  console.log(this.fullJournal);
 }
 
 Journal.prototype.getWords = function () {
-  return fullJournal = fullJournal.split(" ").length;
-  console.log(getWords);
+  console.log(typeof this.fullJournal)
+
+  let words = this.fullJournal.split(" ");
+  console.log(words);
+  // let journalArr = arrayLength.split(', ');
+  // console.log(journalArr);
+  // console.log(arrayLength.length);
+  //   console.log(arrayLength);
 }
 
 
